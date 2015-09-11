@@ -1,0 +1,31 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.callevonanka.assignment_1.GetQuoteFrag"
+    android:id="@+id/FragGetQuote"
+    android:background="#e3434357">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/info"
+        android:id="@+id/textView"
+        android:layout_gravity="center|top"
+        android:paddingTop="50dp"
+        android:textColor="#ffffff"
+        android:textSize="22dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button"
+        android:id="@+id/buttonID"
+        android:layout_gravity="center|bottom"
+        android:hint="@string/button"
+        android:onClick="startFrag"
+        android:background="#74b5ff"
+        android:textSize="20dp" />
+
+</FrameLayout>
