@@ -16,7 +16,7 @@ public class ShowQuoteFrag extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.i("ShowQuoteFragment", "In onCreateView");
+        Log.i("SHOW QUOTE FRAG", "Created view");
 
         View v = inflater.inflate(R.layout.activity_show_quote_frag, container, false);
 

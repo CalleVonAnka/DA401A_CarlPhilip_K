@@ -19,7 +19,7 @@ public class GetQuoteFrag extends Fragment implements View.OnClickListener {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        Log.i("GET QUOTE FRAG", "Create view");
+        Log.i("GET QUOTE FRAG", "Created view");
         View v = inflater.inflate(R.layout.activity_get_quote_frag, container, false);
         View button = v.findViewById(R.id.buttonID);
         button.setOnClickListener(this);
