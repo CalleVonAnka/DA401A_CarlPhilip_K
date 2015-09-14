@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Assignment_1</string>
+
+    <string name = "info"> Cliquez sur le bouton pour obtenir un devis. </string>
+    <string name = "button"> Nouvelle citant </string>
+    <string name = "action_settings"> Paramètres </string>
+    <string name = "title_activity_get_quote_frag"> Obtenir un prix Fragment </string>
+    <string name = "title_activity_show_quote_frag"> Voir Citer Fragment </string>
+
+
+    <string-array name="array">
+        <item> Je possede six ecluses sur ma porte tous dans une rangee. Quand je sors, je verrouille tous les autre. Je me dis, peu importe combien de temps quelqu´un se tient la la cueillette des serrures, ils sont toujours verrouillage a trois. </item>
+        <item> Toujours emprunter de l´argent a partir d´un pessimiste. Il ne sera pas attendre de retour. </item>
+        <item> Comment obtenez-vous un doux petit 80-year-old lady-a-dire le mot F? Obtenez une autre petite 80 ans dame douce a crier BINGO! </item>
+        <item> Soyez vous-meme; tout le monde est deja pris. </item>
+        <item> Dieu ne pouvais pas etre partout, il a cree meres </item>
+        <item> Ne soyez pas peur d´aller lentement, crains seulement de rester immobile. </item>
+        <item> En savoir hier, vivre pour aujourd´hui, l´espoir pour demain. </item>
+        <item> Dans l´enseignement d´autres, nous nous enseignons. </item>
+        <item> Bonheur ne viendra jamais a ceux qui ne parviennent pas a apprecier ce qu´ils ont deja. </item>
+        <item> Un jour, votre vie va clignoter devant vos yeux. Assurez-vous que la peine de regarder. </item>
+        <item> La vie est pas un probleme a resoudre, mais une realite qui doit etre connu. </item>
+        <item> Suivre l´amour et il fuira, fuir l´amour et il suivra. </item>
+        <item> Un ami se promène dans quand tout le monde sort </item>
+    </string-array>
+
+
+</resources>
+
+
