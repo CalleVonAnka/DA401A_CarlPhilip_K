@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         if (savedInstanceState == null){
+            getSupportFragmentManager();
             getFragmentManager()
                     .beginTransaction()
                     .add(R.id.Main_Activity_ID, new MovieListFrag())
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         Log.i("MAIN", "Resumed");
     }
 
-    @Override
+
     public void onBackPressed() {
         if (getFragmentManager().getBackStackEntryCount() > 0 ){
             getFragmentManager().popBackStack();

@@ -41,9 +41,9 @@ public class Adapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         Log.i("ADAPTER", "getView");
-
-        convertView = mLayoutInflater.inflate(R.layout.movie_item, parent, false);
-
+        if(convertView == null) {
+            convertView = mLayoutInflater.inflate(R.layout.movie_item, parent, false);
+        }
         Movie movie = (Movie) getItem(position);
 
         ImageView coverImageView = (ImageView) convertView.findViewById(R.id.movie_cover);

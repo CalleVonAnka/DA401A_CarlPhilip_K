@@ -7,7 +7,7 @@ tools:context="com.example.callevonanka.assignment2.MovieItemDetail"
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="190dp"
         android:id="@+id/movie_cover"
         />
 
@@ -16,23 +16,24 @@ tools:context="com.example.callevonanka.assignment2.MovieItemDetail"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_below="@+id/movie_cover"
-            android:padding="16dp"
-            android:nestedScrollingEnabled="false">
+            android:paddingLeft="16dp"
+            >
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/movie_title"
-                android:textColor="#2084ff"
-                android:textSize="24sp" />
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:paddingTop="16dp"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/movie_year"
                 android:layout_below="@+id/movie_title"
-                android:textColor="#95b4ff"
-                android:textSize="16sp" />
+                android:textColor="#ffffff"
+                android:textSize="16sp"/>
 
             <TextView
                 android:layout_width="match_parent"

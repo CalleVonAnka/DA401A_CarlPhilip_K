@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:id="@+id/Main_Activity_ID">
+    android:id="@+id/Main_Activity_ID"
+    android:background="#000000">
 
 </RelativeLayout>
