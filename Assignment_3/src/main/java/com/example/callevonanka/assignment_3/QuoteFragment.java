@@ -3,6 +3,7 @@ package com.example.callevonanka.assignment_3;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -53,9 +54,9 @@ public class QuoteFragment extends Fragment {
         mQuoteAdapter = new QuoteAdapter(mQuoteList, getActivity().getLayoutInflater());
         listView.setAdapter(mQuoteAdapter);
 
-        ImageButton faButton = (ImageButton) v.findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) v.findViewById(R.id.fab);
 
-        faButton.setOnClickListener(new View.OnClickListener() {
+        fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.i("QUOTEFRAGMENT", "on button click");

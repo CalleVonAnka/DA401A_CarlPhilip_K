@@ -9,15 +9,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:id="@+id/header"
-        android:background="#1e88e5">
+        android:id="@+id/header">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Quotes"
-            android:textSize="24pt"
-            android:textColor="#FFFFFF"/>
+            android:text="Press action button for quotes"
+            android:textSize="18dp"
+            android:paddingTop="16dp"
+            android:textColor="#55000000"/>
     </LinearLayout>
 
     <ListView
@@ -32,10 +32,11 @@
         android:stackFromBottom="true"/>
 
     <ProgressBar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="164dp"
+        android:layout_height="10dp"
         android:layout_centerInParent="true"
         android:indeterminate="true"
+        style="@android:style/Widget.ProgressBar.Horizontal"
         android:id="@+id/quote_progress_bar"
         />
 
@@ -46,15 +47,17 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true">
 
-        <ImageButton
-            android:id="@+id/fab"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:elevation="10dp"
-            android:background="@drawable/oval"
-            android:layout_marginBottom="65dp"
-            android:layout_marginRight="25dp"
+        <android.support.design.widget.FloatingActionButton
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            app:fabSize="normal"
             android:src="@drawable/ic_action_name"
-            android:layout_gravity="bottom|end"/>
+            android:scaleType="center"
+            app:elevation="4dp"
+            android:id="@+id/fab"
+            android:layout_height="56dp"
+            android:layout_width="56dp"
+            android:layout_gravity="bottom|end"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"/>
     </LinearLayout>
 </RelativeLayout>
