@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Assignment_4</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string name="title1">How many eyelids does a camel have?</string>
+    <string name="title2">What words did Shakespeare invent?</string>
+    <string name="title3">Does a ducks quack echo?</string>
+    <string name="title4">How many times a day does your heart beat?</string>
+
+
+    <string-array name="item1">
+        <item>3</item>
+        <item>0</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="item2">
+        <item>Blackout and role</item>
+        <item>assassination and bump</item>
+        <item>Barracuda and devestation</item>
+    </string-array>
+
+    <string-array name="item3">
+        <item>Yes of course</item>
+        <item>no</item>
+        <item>quack, yes!</item>
+    </string-array>
+
+    <string-array name="item4">
+        <item>78 000 - 85 000</item>
+        <item>About 70 000</item>
+        <item>Over 100 000</item>
+    </string-array>
+</resources>
