@@ -44,8 +44,8 @@ public class MapsActivity extends FragmentActivity implements
     private Vibrator mVibrator;
     private MediaPlayer mSound;
 
-    private ArrayList<LatLng> markerLatLng = new ArrayList<>();
-    private ArrayList<Marker> markerPos = new ArrayList<>();
+    private ArrayList<LatLng> mLatLng = new ArrayList<>();
+    private ArrayList<Marker> mMarker = new ArrayList<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -60,7 +60,12 @@ public class MapsActivity extends FragmentActivity implements
             public void onMapReady(GoogleMap googleMap) {
                 mMap = googleMap;
                 UiSettings mUISettings = mMap.getUiSettings();
+
                 mUISettings.setZoomControlsEnabled(true);
+                mUISettings.setMyLocationButtonEnabled(false);
+                mUISettings.setCompassEnabled(true);
+
+                mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
                 mMap.setMyLocationEnabled(true);
 
                 LatLng first = new LatLng(55.596929, 12.950161);
@@ -68,20 +73,20 @@ public class MapsActivity extends FragmentActivity implements
                 LatLng third = new LatLng(55.602209, 12.967016);
                 LatLng fourth = new LatLng(55.604615, 12.975406);
 
-                markerLatLng.add(first);
-                markerLatLng.add(second);
-                markerLatLng.add(third);
-                markerLatLng.add(fourth);
+                mLatLng.add(first);
+                mLatLng.add(second);
+                mLatLng.add(third);
+                mLatLng.add(fourth);
 
                 Marker firstMarker = mMap.addMarker(new MarkerOptions().position(first).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_location_on_black_48dp)));
                 Marker secondMarker = mMap.addMarker(new MarkerOptions().position(second).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_location_on_black_48dp)));
                 Marker thirdMarker = mMap.addMarker(new MarkerOptions().position(third).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_location_on_black_48dp)));
                 Marker fourthMarker = mMap.addMarker(new MarkerOptions().position(fourth).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_location_on_black_48dp)));
 
-                markerPos.add(firstMarker);
-                markerPos.add(secondMarker);
-                markerPos.add(thirdMarker);
-                markerPos.add(fourthMarker);
+                mMarker.add(firstMarker);
+                mMarker.add(secondMarker);
+                mMarker.add(thirdMarker);
+                mMarker.add(fourthMarker);
 
                 mMap.moveCamera(CameraUpdateFactory.newLatLng(first));
                 mMap.moveCamera(CameraUpdateFactory.zoomTo(18));
@@ -89,24 +94,25 @@ public class MapsActivity extends FragmentActivity implements
                 mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
                     @Override
                     public boolean onMarkerClick(Marker marker) {
-                        FragmentTransaction fT = getSupportFragmentManager().beginTransaction();
+                        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+
 
                         switch (marker.getTitle()) {
                             case "Question 1":
                                 Dialog1 dialog1 = new Dialog1();
-                                dialog1.show(fT, "");
+                                dialog1.show(fragmentTransaction, "");
                                 break;
                             case "Question 2":
                                 Dialog2 dialog2 = new Dialog2();
-                                dialog2.show(fT, "");
+                                dialog2.show(fragmentTransaction, "");
                                 break;
                             case "Question 3":
                                 Dialog3 dialog3 = new Dialog3();
-                                dialog3.show(fT, "");
+                                dialog3.show(fragmentTransaction,"");
                                 break;
                             case "Question 4":
                                 Dialog4 dialog4 = new Dialog4();
-                                dialog4.show(fT, "");
+                                dialog4.show(fragmentTransaction, "");
                                 break;
                         }
                         return true;
@@ -122,9 +128,10 @@ public class MapsActivity extends FragmentActivity implements
                 .build();
         mGoogleApiClient.connect();
 
-        FragmentTransaction fT = getSupportFragmentManager().beginTransaction();
-        MarkerClickDialog dialogStart = new MarkerClickDialog();
-        dialogStart.show(fT, "");
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        MarkerClickDialog markerClickDialog = new MarkerClickDialog();
+        markerClickDialog.show(fragmentTransaction, "");
+        mVibrator.vibrate(1000);
     }
 
     private void setUpMapIfNeeded(){
@@ -150,21 +157,25 @@ public class MapsActivity extends FragmentActivity implements
     @Override
     public void onLocationChanged(Location location) {
 
-        Location mLocation = new Location("");
+        Location mLocation = new Location("Marker");
 
-        for (int i = 0; i < markerPos.size(); i++) {
+        for (int i = 0; i < mMarker.size(); i++) {
 
-            mLocation.setLongitude(markerLatLng.get(i).longitude);
-            mLocation.setLatitude(markerLatLng.get(i).latitude);
+            mLocation.setLongitude(mLatLng.get(i).longitude);
+            mLocation.setLatitude(mLatLng.get(i).latitude);
 
             float distance = location.distanceTo(mLocation);
 
             if(distance < 50){
                 mSound.start();
-                mVibrator.vibrate(1500);
-                markerPos.get(i).setTitle("Question "+(i+1));
-                markerPos.get(i).setSnippet("Click me to answear");
-                markerPos.get(i).showInfoWindow();
+                mVibrator.vibrate(500);
+                mMarker.get(i).setTitle("Question "+(i+1));
+                mMarker.get(i).setSnippet("Click me for question");
+                mMarker.get(i).showInfoWindow();
+            }
+            else{
+                mMarker.get(i).hideInfoWindow();
+                mMarker.get(i).remove();
             }
         }
     }

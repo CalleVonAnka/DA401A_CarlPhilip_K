@@ -21,8 +21,8 @@ public class MarkerClickDialog extends DialogFragment implements Dialog.OnClickL
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
         AlertDialog.Builder dialog = new AlertDialog.Builder(getActivity())
-                .setTitle("Welcome to treasure hunt")
-                .setMessage("Find and answear the questions on the map.")
+                .setTitle("Welcome to treasure hunt!")
+                .setMessage("Walk near this place to get your first question, and continue the walk on this road to find the other questions.")
                 .setPositiveButton("OK", this);
         return dialog.create();
     }
