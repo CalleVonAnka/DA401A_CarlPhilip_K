@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Randomized quotes</string>
+    <string name="get">Get Quote</string>
+    <string name="action_settings">Settings</string>
+    <string name="info">Press add-button to get quotes. \n Hold an item to mark and delete.</string>
+    <string name="delete_item">delete</string>
+</resources>
